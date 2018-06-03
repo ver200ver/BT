@@ -107,7 +107,6 @@
                 flag++;
             } else console.log("Eror name=" + name);
             if (flag == 3) {
-                console.log(getBT('BTCUSD', 2017, 1))
                 paint(getBT('BTCUSD', 2017, 1), 'BTCUSD')
                 trends = trend(getBT('BTCUSD', 2017, 0), "less0")
                 if (trends[trends.length - 1][1] > trends[trends.length - 2][1]) addImg("up", "BTCUSD Growth")
@@ -236,7 +235,6 @@
             value = res[0][1]
             count = 1;
             xx = res[0][0]
-            console.log(res.length)
             last = 0;
             for (i = 0; i < res.length; i++) {
                 if (xx == res[i][0]) {
