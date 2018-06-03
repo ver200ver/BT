@@ -14,6 +14,10 @@
     <link href="css/font.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/regression.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="js/base.min.js"></script>
+    <script src="js/ui.min.js"></script>
+    <script src="js/chai.js"></script>
+    <script src="js/exports.min.js"></script>
     <style>
         html,
         body,
@@ -23,7 +27,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         .down,
         .up {
             width: 63px;
@@ -34,14 +38,12 @@
 
 <body> <img src="img/kainos-logo-sticky.png"></img>
     <center>
-        <h1>CoinTrends - Challenge 2018 </h1> </center>
+        <h1>CoinTrends - Challenge 2018 </h1>
+    </center>
     <div id="container"></div>
     <center>
         <div class="img"></div>
     </center>
-    <script src="js/base.min.js"></script>
-    <script src="js/ui.min.js"></script>
-    <script src="js/exports.min.js"></script>
     <script type="text/javascript">
         var chart = docs.line();
         // turn on chart animation
@@ -200,6 +202,7 @@
             }
             return allRes;
         }
+
         function getBT(type, year, flagShort) {
             BT = '';
             if (type == 'BTCUSD') BT = BTCUSD;
@@ -247,6 +250,33 @@
                 }
             }
             return ress;
+        }
+		
+        test()
+        function test() {
+            var assert = chai.assert;
+            array = new Array(0);
+            arrayOut = new Array(2)
+            arrayOut[0] = new Array(2)
+            arrayOut[0][0] = 4
+            arrayOut[0][1] = 3
+            arrayOut[1] = new Array(2)
+            arrayOut[1][0] = 6
+            arrayOut[1][1] = 7
+
+            tmp = new Array(2)
+            tmp[0] = 4
+            tmp[1] = 3
+            addToArray(array, tmp, 2)
+            tmp = new Array(2)
+            tmp[0] = 6
+            tmp[1] = 7
+            addToArray(array, tmp, 2)
+            assert.isArray(array);
+            assert.equal(array[0][0], arrayOut[0][0]);
+            assert.equal(array[0][1], arrayOut[0][1]);
+            assert.equal(array[1][0], arrayOut[1][0]);
+            assert.equal(array[1][1], arrayOut[1][1]);
         }
     </script>
 </body>
