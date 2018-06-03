@@ -107,6 +107,7 @@
                 flag++;
             } else console.log("Eror name=" + name);
             if (flag == 3) {
+                console.log(getBT('BTCUSD', 2017, 1))
                 paint(getBT('BTCUSD', 2017, 1), 'BTCUSD')
                 trends = trend(getBT('BTCUSD', 2017, 0), "less0")
                 if (trends[trends.length - 1][1] > trends[trends.length - 2][1]) addImg("up", "BTCUSD Growth")
@@ -210,7 +211,10 @@
             index = 0;
             for (i = 0; i < length; i++) {
                 tmp = new Date(BT[i].time)
+
+
                 if (tmp.getFullYear() != year) continue;
+
                 res.length = res.length + 1;
                 res[res.length - 1] = new Array(lengthSubArray);
                 if (flagShort == 1) {
@@ -221,6 +225,7 @@
                 res[index][1] = BT[i].average;
                 index = index + 1;
             }
+
             tmpRes = res
             length = res.length
             res = new Array(length)
@@ -231,6 +236,8 @@
             value = res[0][1]
             count = 1;
             xx = res[0][0]
+            console.log(res.length)
+            last = 0;
             for (i = 0; i < res.length; i++) {
                 if (xx == res[i][0]) {
                     value = value + res[i][1];
@@ -243,12 +250,24 @@
                     xx = res[i][0]
                     value = res[i][1]
                     count = 1
+                    last = i;
                 }
             }
+            value = res[last][1]
+            count = 1;
+            for (i = last; i < res.length; i++) {
+                value = value + res[i][1];
+                count++;
+            }
+            tmp = new Array(2)
+            tmp[0] = res[last][0];
+            tmp[1] = value / count;
+            addToArray(ress, tmp, 2)
             return ress;
         }
-		
+
         test()
+
         function test() {
             var assert = chai.assert;
             array = new Array(0);
