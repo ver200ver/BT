@@ -107,20 +107,20 @@
                 flag++;
             } else console.log("Eror name=" + name);
             if (flag == 3) {
-                paint(getBT('BTCUSD', 2017, 1), 'BTCUSD')
-                trends = trend(getBT('BTCUSD', 2017, 0), "less0")
+                paint(getBT('BTCUSD', 2018, 1), 'BTCUSD')
+                trends = trend(getBT('BTCUSD', 2018, 0), "less0")
                 if (trends[trends.length - 1][1] > trends[trends.length - 2][1]) addImg("up", "BTCUSD Growth")
-                else addImg("up", "BTCUSD Drop")
+                else addImg("down", "BTCUSD Drop")
                 paint(trends, "BTCUSD Trend")
-                paint(getBT('ETHUSD', 2017, 1), 'ETHUSD')
-                trends = trend(getBT('ETHUSD', 2017, 0), "less0")
+                paint(getBT('ETHUSD', 2018, 1), 'ETHUSD')
+                trends = trend(getBT('ETHUSD', 2018, 0), "less0")
                 if (trends[trends.length - 1][1] > trends[trends.length - 2][1]) addImg("up", "BTCUSD Growth")
-                else addImg("up", "BTCUSD Drop")
+                else addImg("down", "BTCUSD Drop")
                 paint(trends, "ETHUSD Trend")
-                paint(getBT('LTCUSD', 2017, 1), 'LTCUSD')
-                trends = trend(getBT('LTCUSD', 2017, 0), "less0")
+                paint(getBT('LTCUSD', 2018, 1), 'LTCUSD')
+                trends = trend(getBT('LTCUSD', 2018, 0), "less0")
                 if (trends[trends.length - 1][1] > trends[trends.length - 2][1]) addImg("up", "BTCUSD Growth")
-                else addImg("up", "BTCUSD Drop")
+                else addImg("down", "BTCUSD Drop")
                 paint(trends, "LTCUSD Trend")
             }
         }
